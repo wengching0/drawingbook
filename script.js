@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id), total=20;
-const img=n=>`assets/graphics/${n}.jpg`, music=n=>`assets/music/music${n}.mp3`, speech=n=>`assets/speech/speech${n}.mp3`;
+const img=n=>`graphics/${n}.jpg`, music=n=>`music/music${n}.mp3`, speech=n=>`speech/speech${n}.mp3`;
 const store=(k,v)=>{try{localStorage.setItem('drawingbook_'+k,JSON.stringify(v))}catch(e){}},load=(k,d)=>{try{return JSON.parse(localStorage.getItem('drawingbook_'+k))??d}catch(e){return d}};
 let page=Math.min(19,Math.max(0,load('page',0))), muted=load('muted',false),musicOn=load('musicOn',true),volume=load('volume',75),reading=false,themeOn=false,showText=true,quizAnswers={};
 const audio=$('musicAudio'),voice=$('speechAudio'),theme=$('themeAudio');
